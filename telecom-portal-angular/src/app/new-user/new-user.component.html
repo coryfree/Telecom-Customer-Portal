@@ -1,0 +1,42 @@
+<div class="container-fluid">
+    </div>
+   
+        <div class="col-12" style="border-radius: rem1;">
+            <h2>Register new user</h2>
+            <form (ngSubmit)="handleSubmit(); userForm.reset()" class="mg-5" id="new-user" #userForm>
+                <div class="input-group mb-3">
+                    <div>
+                        <span class="input-group-text" id="1">First Name:</span>
+                    </div>
+                    <input name="first-name" [(ngModel)]="formData.firstName" class="form-control" placeholder="First Name" type="text" />
+                </div>
+
+                <div class="input-group mb-3">
+                    <div>
+                        <span class="input-group-text" id="2">Last Name:</span>
+                    </div>
+                    <input name="last-name" [(ngModel)]="formData.lastName" class="form-control" placeholder="Last Name" type="text" />
+                </div>
+
+                <div class="input-group mb-3">
+                    <div>
+                        <span class="input-group-text" id="3">Email:</span>
+                    </div>
+                    <input name="email" [(ngModel)]="formData.email" class="form-control" placeholder="Email" type="text" />
+                </div>
+
+                <div class="input-group mb-3">
+                    <div>
+                        <span class="input-group-text" id="4">Password:</span>    
+                    </div>
+                    <input name="password" [(ngModel)]="formData.password" class="form-control" placeholder="Password" type="text" />
+                </div>
+
+                <div>
+                    <input class="btn btn-primary" type="submit" value="Create Account" />
+                </div>
+            </form>
+
+        </div>
+
+

@@ -1,0 +1,57 @@
+<div class="container-fluid">
+    <div class="row">
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6 border m-3 p-5 card" style="border-radius: 1rem;">
+            <h2 class="text-align-center">Add a device</h2>
+<form>
+    <div class="input-group mb-3">
+        <div>
+            <span class="input-group-text" id="1">Phone Number:</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Phone Number" aria-describedby="1" [(ngModel)]="device.phoneNumber" name="device-phone-number"/>
+    </div>
+
+    <div ngbDropdown class="d-inline-block input-group mb-3">
+        <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>{{ device.plan.planDescription }}</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button ngbDropdownItem (click)="device.plan = planService.getPlan()">{{ planService.getPlan().planDescription }}</button>
+          <button ngbDropdownItem (click)="device.plan = planService.getPlan1()">{{ planService.getPlan1().planDescription }}</button>
+          <button ngbDropdownItem (click)="device.plan = planService.getPlan2()">{{ planService.getPlan2().planDescription }}</button>
+        </div>
+      </div>
+      <!-- Device name -->
+    <div class="input-group mb-3">
+        <div>
+            <span class="input-group-text" id="2">Device Name:</span>
+        </div>
+            <input type="text" class="form-control" aria-label="Device Name" aria-describedby="2" [(ngModel)]="device.deviceName" name="device-phone-number"/>
+    </div>
+    <!-- Device Description -->
+    <div  class="input-group mb-3">
+        <div>
+            <span class="input-group-text" id="3">Device Description:</span>
+        </div>
+        <input type="text" class="form-control" aria-describedby="3" aria-label="Device Description" [(ngModel)]="device.deviceDescription" name="device-phone-number"/>
+    </div>
+    <div>
+
+        <button class="btn btn-primary" (click)="handleSubmit()">Submit</button>
+    </div>
+</form>
+
+<ngb-alert *ngIf="errorMessage" type="danger" (closed)=" errorMessage = ''">{{ errorMessage }}
+</ngb-alert>
+
+<ngb-alert *ngIf="successMessage" type="success" (closed)=" successMessage = ''">{{ successMessage }}
+</ngb-alert>
+        </div>
+        <div class="col-3"></div>
+
+    </div>
+</div>

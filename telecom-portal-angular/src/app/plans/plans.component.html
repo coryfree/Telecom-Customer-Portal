@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <div class="row">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
+  <div class="row align-items-center m-5">
+    <div class="col" *ngFor="let plan of plans">
+      <div class="card text-center p-5" style="border-radius: 1rem;">
+        <h5>Plan: </h5>
+        <h2>{{ plan.planDescription }}</h2>
+        <br>
+        <h5>Number of Devices:</h5>
+        <h2> {{ plan.numberOfDevices }} </h2>
+        <br>
+        <h5>Cost: $ </h5>
+        <h2>{{ plan.costPerDevice }} </h2>
+      </div>
+    </div>
+  </div>
+</div>

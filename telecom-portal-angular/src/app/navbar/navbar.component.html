@@ -1,0 +1,27 @@
+
+<nav *ngIf="userManagerService.getUser().userID != 0" class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <div>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" [routerLink]="['/dashboard']">User Dashboard</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" [routerLink]="['/device']">Manage Devices</a> 
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" [routerLink]="['/add-device']">Add Devices</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" [routerLink]="['/plans']">Data Plans</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" [routerLink]="['/bill']">Bills</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link text-primary" (click)="logout()" [routerLink]="['/']">Log Out</a>
+            </li>
+
+        </ul>
+    </div>
+</nav>
